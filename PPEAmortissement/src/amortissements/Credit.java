@@ -1,7 +1,7 @@
 package amortissements;
 
 /**
- * Représente un crédit.
+ * Represente un credit.
  */
 
 public class Credit 
@@ -10,17 +10,17 @@ public class Credit
 			ANNUITES_CONSTANTES = 2;
 
 	/**
-	 * Créée un crédit.
+	 * Cree un credit.
 	 */
 	
 	Credit (int typeCredit, double montantEmprunte, double annuiteMaximale,
 			double taux, int duree)
 	{
-		// TODO à compléter
+		Credit credit = new Credit(typeCredit, montantEmprunte, annuiteMaximale, taux, duree); 
 	}
 	
 	/**
-	 * Retourné le montant emprunté.
+	 * Retourne le montant emprunte.
 	 */
 	
 	public double montantEmprunte()
@@ -30,7 +30,7 @@ public class Credit
 	}
 	
 	/**
-	 * Retourne le montant de la plus grande annuité. 
+	 * Retourne le montant de la plus grande annuite. 
 	 */
 	
 	public double annuiteMaximale()
@@ -40,7 +40,7 @@ public class Credit
 	}
 	
 	/**
-	 * Retourne le taux du crédit.
+	 * Retourne le taux du credit.
 	 */
 	
 	public double taux()
@@ -50,7 +50,7 @@ public class Credit
 	}
 	
 	/**
-	 * Retourne nombre d'annuités à verser.
+	 * Retourne nombre d'annuites a� verser.
 	 */
 	
 	public int duree()
