@@ -16,7 +16,11 @@ public class Credit
 	Credit (int typeCredit, double montantEmprunte, double annuiteMaximale,
 			double taux, int duree)
 	{
-		Credit credit = new Credit(typeCredit, montantEmprunte, annuiteMaximale, taux, duree); 
+		typeCredit = 0;
+		montantEmprunte = 0;
+		annuiteMaximale = 0;
+		taux = 0;
+		duree = 0;
 	}
 	
 	/**
@@ -25,7 +29,7 @@ public class Credit
 	
 	public double montantEmprunte()
 	{
-		// TODO à compléter
+		// TODO Ã  complÃ©ter
 		return 0;
 	}
 	
@@ -35,7 +39,7 @@ public class Credit
 	
 	public double annuiteMaximale()
 	{
-		// TODO à compléter
+		// TODO Ã  complÃ©ter
 		return 0;
 	}
 	
@@ -45,75 +49,75 @@ public class Credit
 	
 	public double taux()
 	{
-		// TODO à compléter
+		// TODO Ã  complÃ©ter
 		return 0;
 	}
 	
 	/**
-	 * Retourne nombre d'annuites a� verser.
+	 * Retourne nombre d'annuites a  verser.
 	 */
 	
 	public int duree()
 	{
-		// TODO à compléter
+		// TODO Ã  complÃ©ter
 		return 0;
 	}
 	
 	/**
-	 * Retourne le tableau d'amortissement du crédit.
+	 * Retourne le tableau d'amortissement du crÃ©dit.
 	 */
 	
 	public TableauAmortissement getTableauAmortissement()
 	{
-		// TODO à compléter.
+		// TODO Ã  complÃ©ter.
 		return null;
 	}
 	
 	/**
-	 * Retourne un crédit en calculant automatiquement le taux.
+	 * Retourne un crÃ©dit en calculant automatiquement le taux.
 	 */
 	
 	public static Credit calculeTaux(int typeCredit, 
 			double montantEmprunte, double annuiteMaximale,
 			int duree)
 	{
-		// TODO à compléter
+		// TODO Ã  complÃ©ter
 		return null;
 	}
 	
 	/**
-	 * Retourne un crédit en calculant automatiquement la durée.
+	 * Retourne un crÃ©dit en calculant automatiquement la durÃ©e.
 	 */
 	
 	public static Credit calculeDuree(int typeCredit, 
 			double montantEmprunte, double annuiteMaximale,
 			double taux)
 	{
-		// TODO à compléter
+		// TODO Ã  complÃ©ter
 		return null;
 	}
 
 	/**
-	 * Retourne un crédit en calculant automatiquement le montant
+	 * Retourne un crÃ©dit en calculant automatiquement le montant
 	 * 	qu'il est possible d'emprunter.
 	 */
 	
 	public static Credit calculeMontantEmprunte(int typeCredit, 
 			double annuiteMaximale,	double taux, int duree)
 	{
-		// TODO à compléter
+		// TODO Ã  complÃ©ter
 		return null;
 	}
 
 	/**
-	 * Retourne un crédit en calculant automatiquement
-	 * l'annuité maximale.
+	 * Retourne un crÃ©dit en calculant automatiquement
+	 * l'annuitÃ© maximale.
 	 */
 	
 	public static Credit calculeAnuiteMaximale(int typeCredit, 
 			double montantEmprunte,	double taux, int duree)
 	{
-		// TODO à compléter
+		// TODO Ã  complÃ©ter
 		return null;
 	}
 }
