@@ -9,12 +9,15 @@ public class Credit
 	public final static int AMORTISSEMENT_CONSTANTS = 1,
 			ANNUITES_CONSTANTES = 2;
 
-	/**
-	 * Cree un credit.
-	 */
+	private int typeCredit;
+	private double montantEmprunte;
+	private double annuiteMaximale;
+	private double taux;
+	private int duree;
 	
-	Credit (int typeCredit, double montantEmprunte, double annuiteMaximale,
-			double taux, int duree)
+	// en cas de neutralité, modifications possibles. Convention.
+	
+	Credit ()
 	{
 		typeCredit = 0;
 		montantEmprunte = 0;
@@ -23,54 +26,65 @@ public class Credit
 		duree = 0;
 	}
 	
+	Credit (int monTypeCredit, double monMontantEmprunte, double monAnnuiteMaximale,
+			double monTaux, int maDuree)
+	{
+		typeCredit = monTypeCredit;
+		montantEmprunte = monMontantEmprunte;
+		annuiteMaximale = monAnnuiteMaximale;
+		taux = monTaux;
+		duree = maDuree;
+	}
 	/**
 	 * Retourne le montant emprunte.
 	 */
 	
-	public double montantEmprunte()
+	public double getmontantEmprunte()
 	{
-		// TODO Ã  complÃ©ter
-		return 0;
+		
+		return montantEmprunte;
 	}
 	
 	/**
 	 * Retourne le montant de la plus grande annuite. 
 	 */
 	
-	public double annuiteMaximale()
+	public double getannuiteMaximale()
 	{
-		// TODO Ã  complÃ©ter
-		return 0;
+		
+		return annuiteMaximale;
 	}
 	
 	/**
 	 * Retourne le taux du credit.
 	 */
 	
-	public double taux()
+	public double gettaux()
 	{
-		// TODO Ã  complÃ©ter
-		return 0;
+		
+		return taux;
 	}
 	
 	/**
 	 * Retourne nombre d'annuites a  verser.
 	 */
 	
-	public int duree()
+	public int getduree()
 	{
-		// TODO Ã  complÃ©ter
-		return 0;
+		
+		return duree;
 	}
 	
 	/**
 	 * Retourne le tableau d'amortissement du crÃ©dit.
 	 */
 	
+	//this = credit actuel, cree un tableauamortissement du credit actuel et le retourne.
+	
 	public TableauAmortissement getTableauAmortissement()
 	{
-		// TODO Ã  complÃ©ter.
-		return null;
+		
+		return new TableauAmortissement(this);
 	}
 	
 	/**
@@ -81,8 +95,18 @@ public class Credit
 			double montantEmprunte, double annuiteMaximale,
 			int duree)
 	{
-		// TODO Ã  complÃ©ter
-		return null;
+		double taux = 0;
+		
+		if (typeCredit == 1)
+		{
+			double amortissement = (montantEmprunte/duree);
+			System.out.println(amortissement);
+			System.out.println(annuiteMaximale);
+			taux = ((annuiteMaximale-amortissement)/(montantEmprunte));
+		}
+		System.out.println(taux);
+		return new Credit(typeCredit, montantEmprunte, annuiteMaximale,
+			 taux, duree);
 	}
 	
 	/**
