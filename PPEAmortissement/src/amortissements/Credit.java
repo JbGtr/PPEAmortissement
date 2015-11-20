@@ -46,7 +46,7 @@ public class Credit
 	 * Retourne le montant de la plus grande annuite. 
 	 */
 	
-	public double getAnnuiteMaximale()
+	public double annuiteMaximale()
 	{
 		
 		return annuiteMaximale;
@@ -56,7 +56,7 @@ public class Credit
 	 * Retourne le taux du credit.
 	 */
 	
-	public double getTaux()
+	public double taux()
 	{
 		
 		return taux;
@@ -66,7 +66,7 @@ public class Credit
 	 * Retourne nombre d'annuites a  verser.
 	 */
 	
-	public int getDuree()
+	public int duree()
 	{
 		
 		return duree;
