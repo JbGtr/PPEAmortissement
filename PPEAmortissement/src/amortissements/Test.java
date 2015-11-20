@@ -6,8 +6,8 @@ public class Test {
 		
 		Credit cr = new Credit();
 		
-		Credit c = cr.calculeTaux(1, 
-			20000, 6000,4
+		Credit c = cr.calculeDuree(1, 
+			20000, 6000,5
 			);
 				
 		System.out.println(c);

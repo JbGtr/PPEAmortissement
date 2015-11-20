@@ -39,7 +39,7 @@ public class Credit
 	 * Retourne le montant emprunte.
 	 */
 	
-	public double getmontantEmprunte()
+	public double getMontantEmprunte()
 	{
 		
 		return montantEmprunte;
@@ -49,7 +49,7 @@ public class Credit
 	 * Retourne le montant de la plus grande annuite. 
 	 */
 	
-	public double getannuiteMaximale()
+	public double getAnnuiteMaximale()
 	{
 		
 		return annuiteMaximale;
@@ -59,7 +59,7 @@ public class Credit
 	 * Retourne le taux du credit.
 	 */
 	
-	public double gettaux()
+	public double getTaux()
 	{
 		
 		return taux;
@@ -69,7 +69,7 @@ public class Credit
 	 * Retourne nombre d'annuites a  verser.
 	 */
 	
-	public int getduree()
+	public int getDuree()
 	{
 		
 		return duree;
@@ -97,16 +97,16 @@ public class Credit
 	{
 		double taux = 0;
 		
-		if (typeCredit == 1)
+		if (typeCredit == AMORTISSEMENT_CONSTANTS)
 		{
 			double amortissement = (montantEmprunte/duree);
-			System.out.println(amortissement);
-			System.out.println(annuiteMaximale);
-			taux = ((annuiteMaximale-amortissement)/(montantEmprunte));
+			taux = ((annuiteMaximale-amortissement)/(montantEmprunte)*100);
+			System.out.println(taux);
+			return new Credit(typeCredit, montantEmprunte, annuiteMaximale,
+					 taux, duree);
 		}
-		System.out.println(taux);
-		return new Credit(typeCredit, montantEmprunte, annuiteMaximale,
-			 taux, duree);
+		return null;
+		
 	}
 	
 	/**
@@ -117,7 +117,13 @@ public class Credit
 			double montantEmprunte, double annuiteMaximale,
 			double taux)
 	{
-		// TODO Ã  complÃ©ter
+		if (typeCredit == AMORTISSEMENT_CONSTANTS)
+		{
+			double interet = montantEmprunte * (taux/100) ;
+			double amortissement = annuiteMaximale - interet;
+			int duree = (int)(montantEmprunte/amortissement);
+			return new Credit (typeCredit, montantEmprunte, annuiteMaximale, taux, duree);
+		}
 		return null;
 	}
 
@@ -129,7 +135,10 @@ public class Credit
 	public static Credit calculeMontantEmprunte(int typeCredit, 
 			double annuiteMaximale,	double taux, int duree)
 	{
-		// TODO Ã  complÃ©ter
+		if(typeCredit == AMORTISSEMENT_CONSTANTS)
+		{
+			
+		}
 		return null;
 	}
 
