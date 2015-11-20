@@ -2,6 +2,7 @@ package amortissements;
 
 import javax.swing.*;
 
+
 public class Interface{
 
 	/**
