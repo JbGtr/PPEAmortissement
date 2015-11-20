@@ -38,7 +38,7 @@ public class Credit
 	
 	public double montantEmprunte()
 	{
-		// TODO Ã  complÃ©ter
+		
 		return montantEmprunte;
 	}
 	
@@ -46,9 +46,9 @@ public class Credit
 	 * Retourne le montant de la plus grande annuite. 
 	 */
 	
-	public double annuiteMaximale()
+	public double getAnnuiteMaximale()
 	{
-		// TODO Ã  complÃ©ter
+		
 		return annuiteMaximale;
 	}
 	
@@ -56,9 +56,9 @@ public class Credit
 	 * Retourne le taux du credit.
 	 */
 	
-	public double taux()
+	public double getTaux()
 	{
-		// TODO Ã  complÃ©ter
+		
 		return taux;
 	}
 	
@@ -66,9 +66,9 @@ public class Credit
 	 * Retourne nombre d'annuites a  verser.
 	 */
 	
-	public int duree()
+	public int getDuree()
 	{
-		// TODO Ã  complÃ©ter
+		
 		return duree;
 	}
 	
@@ -76,10 +76,12 @@ public class Credit
 	 * Retourne le tableau d'amortissement du crÃ©dit.
 	 */
 	
+	//this = credit actuel, cree un tableauamortissement du credit actuel et le retourne.
+	
 	public TableauAmortissement getTableauAmortissement()
 	{
-		// TODO Ã  complÃ©ter.
-		return null;
+		
+		return new TableauAmortissement(this);
 	}
 	
 	/**
@@ -90,7 +92,16 @@ public class Credit
 			double montantEmprunte, double annuiteMaximale,
 			int duree)
 	{
-		// TODO Ã  complÃ©ter
+		double taux = 0;
+		
+		if (typeCredit == AMORTISSEMENT_CONSTANTS)
+		{
+			double amortissement = (montantEmprunte/duree);
+			taux = ((annuiteMaximale-amortissement)/(montantEmprunte)*100);
+			System.out.println(taux);
+			return new Credit(typeCredit, montantEmprunte, annuiteMaximale,
+					 taux, duree);
+		}
 		return null;
 	}
 	
@@ -102,7 +113,13 @@ public class Credit
 			double montantEmprunte, double annuiteMaximale,
 			double taux)
 	{
-		// TODO Ã  complÃ©ter
+		if (typeCredit == AMORTISSEMENT_CONSTANTS)
+		{
+			double interet = montantEmprunte * (taux/100) ;
+			double amortissement = annuiteMaximale - interet;
+			int duree = (int)(montantEmprunte/amortissement);
+			return new Credit (typeCredit, montantEmprunte, annuiteMaximale, taux, duree);
+		}
 		return null;
 	}
 
@@ -114,7 +131,10 @@ public class Credit
 	public static Credit calculeMontantEmprunte(int typeCredit, 
 			double annuiteMaximale,	double taux, int duree)
 	{
-		// TODO Ã  complÃ©ter
+		if(typeCredit == AMORTISSEMENT_CONSTANTS)
+		{
+			
+		}
 		return null;
 	}
 
