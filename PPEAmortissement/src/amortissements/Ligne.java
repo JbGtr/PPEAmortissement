@@ -9,11 +9,23 @@ public class Ligne
 	/**
 	 * Crée une ligne à partir des valeurs passées en paramètres.
 	 */
+	
+	private int annee;
+	private double capitalInitial;
+	private double interets;
+	private double amortissements;
+	private double annuite;
+	private double capitalFinal;
 
 	Ligne(int annee, double capitalInitial, double interets, 
 			double amortissements, double annuite, double capitalFinal)
 	{
-		// TODO à compléter.
+		this.annee = annee;
+		this.capitalInitial = capitalInitial;
+		this.interets = interets;
+		this.amortissements = amortissements;
+		this.annuite = annuite;
+		this.capitalFinal = capitalFinal;	
 	}
 
 	/**
@@ -23,8 +35,7 @@ public class Ligne
 	
 	public int getAnnee()
 	{
-		// TODO à compléter.
-		return 0;
+		return annee;
 	}
 	
 	/**
@@ -34,8 +45,7 @@ public class Ligne
 	
 	public double getCapitalInitial()
 	{
-		// TODO à compléter.
-		return 0;
+		return capitalInitial;
 	}
 	
 	/**
@@ -44,8 +54,7 @@ public class Ligne
 	
 	public double getInterets()
 	{
-		// TODO à compléter.
-		return 0;
+		return interets;
 	}
 
 	/**
@@ -54,8 +63,7 @@ public class Ligne
 	
 	public double getAmortissements()
 	{
-		// TODO à compléter.
-		return 0;
+		return amortissements;
 	}
 
 	/**
@@ -64,8 +72,7 @@ public class Ligne
 	
 	public double getAnnuite()
 	{
-		// TODO à compléter.
-		return 0;
+		return annuite;
 	}
 	
 	/**
@@ -75,8 +82,7 @@ public class Ligne
 	
 	public double getCapitalFinal()
 	{
-		// TODO à compléter.
-		return 0;
+		return capitalFinal;
 	}
 	
 	/**
@@ -86,8 +92,10 @@ public class Ligne
 	
 	public static Ligne premiereLigne(Credit credit)
 	{
-		// TODO à compléter.
-		return null;
+		double capitalFinal = (credit.montantEmprunte()-credit.annuiteMaximale());
+		double amortissement = (credit.montantEmprunte()/credit.duree());
+		double interet = (credit.montantEmprunte()*(credit.taux()/100));
+		return new Ligne (1, credit.montantEmprunte(), interet, amortissement, credit.annuiteMaximale(), capitalFinal);
 	}
 
 	/**
@@ -96,9 +104,22 @@ public class Ligne
 	 * la dernière ligne.
 	 */
 	
-	public Ligne ligneSuivante(Credit credit)
+	public Ligne ligneSuivante(Credit credit, Ligne lignecourante)
 	{
-		// TODO à compléter.
-		return null;
+		if(lignecourante.annee == credit.duree())
+		{
+			return null;
+		}
+		else
+		{
+			int numannee = lignecourante.annee++;
+			double montantEmprunt = lignecourante.capitalFinal;
+			double interet = (montantEmprunt*(credit.taux()/100));
+			double annuite = lignecourante.amortissements + interet;
+			double capitalFinal = montantEmprunt - annuite;
+			
+			return new Ligne(numannee, montantEmprunt, interet, lignecourante.amortissements, annuite, capitalFinal);
+		}
+	
 	}
 }

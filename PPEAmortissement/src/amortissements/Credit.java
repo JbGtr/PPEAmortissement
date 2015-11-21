@@ -25,7 +25,7 @@ public class Credit
 		this.montantEmprunte = montantEmprunte;
 		this.annuiteMaximale = annuiteMaximale;
 		this.taux = taux;
-		this.duree =duree;
+		this.duree = duree;
 	}
 	
 	/**
@@ -146,7 +146,15 @@ public class Credit
 	public static Credit calculeAnuiteMaximale(int typeCredit, 
 			double montantEmprunte,	double taux, int duree)
 	{
-		// TODO Ã  complÃ©ter
+		if (typeCredit == AMORTISSEMENT_CONSTANTS)
+		{
+			double interet = montantEmprunte * (taux/100);
+			double amortissement = montantEmprunte/duree;
+			double annuiteMaximale = amortissement + interet;
+			return new Credit (typeCredit, montantEmprunte, annuiteMaximale, taux, duree);
+		}
+		
 		return null;
 	}
+	
 }

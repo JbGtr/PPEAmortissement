@@ -4,13 +4,10 @@ public class Test {
 
 	public static void main(String[] args) {
 		
-		Credit cr = new Credit();
+		Credit cr = new Credit(1, 20000, 6000, 5, 4);
 		
-		Credit c = cr.calculeDuree(1, 
-			20000, 6000,5
-			);
-				
-		System.out.println(c);
+		Ligne premiereligne = Ligne.premiereLigne(cr);		
+		System.out.println(premiereligne.getAnnee() + " | " + premiereligne.getCapitalInitial() + " | " + premiereligne.getInterets() + " | " + premiereligne.getAmortissements()  + " | " + premiereligne.getAnnuite() + " | " + premiereligne.getCapitalFinal());
 	}
 
 }
