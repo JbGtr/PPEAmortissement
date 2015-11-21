@@ -104,7 +104,7 @@ public class Ligne
 	 * la dernière ligne.
 	 */
 	
-	public Ligne ligneSuivante(Credit credit, Ligne lignecourante)
+	public static Ligne ligneSuivante(Credit credit, Ligne lignecourante)
 	{
 		if(lignecourante.annee == credit.duree())
 		{
