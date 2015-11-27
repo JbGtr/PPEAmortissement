@@ -10,9 +10,11 @@ public class TableauAmortissement
 	 * Crée le tableau d'amortissement du crédit passé en paramètre.
 	 */
 	
+	Ligne TableauAmor[] = new Ligne [5];
+	
 	public TableauAmortissement(Credit credit)
 	{
-		// TODO à compléter.
+		
 	}
 	
 	/**
@@ -21,8 +23,7 @@ public class TableauAmortissement
 	
 	public int getNbLignes()
 	{
-		// TODO à compléter.
-		return 0;
+		return TableauAmor.length;
 	}
 	
 	/**

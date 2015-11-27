@@ -92,8 +92,8 @@ public class Ligne
 	
 	public static Ligne premiereLigne(Credit credit)
 	{
-		double capitalFinal = (credit.montantEmprunte()-credit.annuiteMaximale());
 		double amortissement = (credit.montantEmprunte()/credit.duree());
+		double capitalFinal = (credit.montantEmprunte()- amortissement);
 		double interet = (credit.montantEmprunte()*(credit.taux()/100));
 		return new Ligne (1, credit.montantEmprunte(), interet, amortissement, credit.annuiteMaximale(), capitalFinal);
 	}
@@ -120,6 +120,5 @@ public class Ligne
 			
 			return new Ligne(numannee, montantEmprunt, interet, lignecourante.amortissements, annuite, capitalFinal);
 		}
-	
 	}
 }

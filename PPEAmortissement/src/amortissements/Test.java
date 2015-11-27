@@ -15,6 +15,7 @@ public class Test {
 			Ligne prochaineligne = Ligne.ligneSuivante(cr, lignecourante);
 			lignecourante=prochaineligne;
 			System.out.println(lignecourante.getAnnee() + " | " + lignecourante.getCapitalInitial() + " | " + lignecourante.getInterets() + " | " + lignecourante.getAmortissements()  + " | " + lignecourante.getAnnuite() + " | " + lignecourante.getCapitalFinal());
+			anneerestante--;
 		}
 	}
 
