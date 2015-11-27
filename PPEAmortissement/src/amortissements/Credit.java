@@ -133,6 +133,8 @@ public class Credit
 	{
 		if(typeCredit == AMORTISSEMENT_CONSTANTS)
 		{
+			double montantEmprunte =annuiteMaximale/(1+(taux/100))/duree;
+			return new Credit (typeCredit, montantEmprunte, annuiteMaximale, taux, duree);
 			
 		}
 		return null;
