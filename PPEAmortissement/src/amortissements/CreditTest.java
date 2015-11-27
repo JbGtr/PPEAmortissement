@@ -8,104 +8,40 @@ public class CreditTest {
 
 	@Test
 	public void testCalculeTaux() {
-		int type = 1;
-		double montant = 20000;
-		double annuiteMaximale = 3100;
-		int duree = 8;
+		
 		double taux = 3;
-		Credit credit;
-		credit = Credit.calculeTaux(Credit.AMORTISSEMENT_CONSTANTS, 20000, 3100, 8);
-		assertTrue(type == credit.typeCredit());
-		assertTrue(montant == credit.montantEmprunte());
-		assertTrue(annuiteMaximale == credit.annuiteMaximale());
-		assertTrue(duree == credit.duree());
-		assertTrue(taux == credit.taux());
-
-		/*annuiteMaximale = 2849;
-		type = 2;
-		credit = Credit.calculeTaux(Credit.ANNUITES_CONSTANTES, 20000, 2849, 8);
-		assertTrue(type == credit.typeCredit());
-		assertTrue(montant == credit.montantEmprunte());
-		assertTrue(annuiteMaximale == credit.annuiteMaximale());
-		assertTrue(duree == credit.duree());
-		assertTrue(taux == credit.taux());*/
+		assertEquals(taux,Credit.calculeTaux(1, 20000, 3100, 8).taux(),0.1);
+		
+		/*double taux1 = 3;
+		assertEquals(taux1,Credit.calculeTaux(2, 20000, 2849, 8).taux(),0);*/
 	}
 
 	@Test
 	public void testCalculeDuree() {
-		int type = 1;
-		double montant = 20000;
-		double annuiteMaximale = 3100;
 		int duree = 8;
-		double taux = 3;
-		Credit credit;
-		credit = Credit.calculeDuree(Credit.AMORTISSEMENT_CONSTANTS, 20000, 3100, 3);
-		assertTrue(type == credit.typeCredit());
-		assertTrue(montant == credit.montantEmprunte());
-		assertTrue(annuiteMaximale == credit.annuiteMaximale());
-		assertTrue(duree == credit.duree());
-		assertTrue(taux == credit.taux());
-
-		/*type = 2;
-		annuiteMaximale = 2849;
-		credit = Credit.calculeDuree(Credit.ANNUITES_CONSTANTES, 20000, 2849, 3);
-		assertTrue(type == credit.typeCredit());
-		assertTrue(montant == credit.montantEmprunte());
-		assertTrue(annuiteMaximale == credit.annuiteMaximale());
-		assertTrue(duree == credit.duree());
-		assertTrue(taux == credit.taux());*/
+		assertEquals(duree,Credit.calculeDuree(1, 20000, 3100, 3).duree(),0.1);
+		
+		/*int duree1 = 8;
+		assertEquals(duree1,Credit.calculeDuree(2, 20000, 2849, 3).duree(),0);*/
 
 	}
 
 	@Test
 	public void testCalculeMontantEmprunte() {
-		int type = 1;
 		double montant = 20000;
-		double annuiteMaximale = 3100;
-		int duree = 8;
-		double taux = 3;
-		Credit credit;
-		credit = Credit.calculeMontantEmprunte(Credit.AMORTISSEMENT_CONSTANTS, 3100, 3, 8);
-		assertTrue(type == credit.typeCredit());
-		assertTrue(montant == credit.montantEmprunte());
-		assertTrue(annuiteMaximale == credit.annuiteMaximale());
-		assertTrue(duree == credit.duree());
-		assertTrue(taux == credit.taux());
-
-		/*type = 2;
-		annuiteMaximale = 2849;
-		credit = Credit.calculeMontantEmprunte(Credit.ANNUITES_CONSTANTES, 2849, 3, 8);
-		assertTrue(type == credit.typeCredit());
-		assertEquals(montant, credit.montantEmprunte(), 0.01);
-		assertTrue(annuiteMaximale == credit.annuiteMaximale());
-		assertTrue(duree == credit.duree());
-		assertTrue(taux == credit.taux());*/
-
+		assertEquals(montant,Credit.calculeMontantEmprunte(1, 3100, 3, 8).montantEmprunte(),0.1);
+		
+		/*double montant1 = 20000;
+		assertEquals(montant1,Credit.calculeMontantEmprunte(2, 2849, 3, 8).montantEmprunte(),0.1);*/
 	}
 
 	@Test
 	public void testCalculeAnnuiteMaximale() {
-		int type = 1;
-		double montant = 20000;
-		double annuiteMaximale = 3100;
-		int duree = 8;
-		double taux = 3;
-		Credit credit;
-		credit = Credit.calculeAnuiteMaximale(Credit.AMORTISSEMENT_CONSTANTS, 20000, 3, 8);
-		assertTrue(type == credit.typeCredit());
-		assertTrue(montant == credit.montantEmprunte());
-		assertTrue(annuiteMaximale == credit.annuiteMaximale());
-		assertTrue(duree == credit.duree());
-		assertTrue(taux == credit.taux());
-
-		/*type = 2;
-		annuiteMaximale = 2849;
-		credit = Credit.calculeAnuiteMaximale(Credit.ANNUITES_CONSTANTES, 20000, 3, 8);
-		assertTrue(type == credit.typeCredit());
-		assertTrue(montant == credit.montantEmprunte());
-		assertTrue(annuiteMaximale == credit.annuiteMaximale());
-		assertTrue(duree == credit.duree());
-		assertTrue(taux == credit.taux());*/
+		double annuiteMax = 3100;
+		assertEquals(annuiteMax,Credit.calculeAnuiteMaximale(1, 20000, 3, 8).annuiteMaximale(),0.1);
+		
+		/*double annuiteMax1 = 2849;
+		assertEquals(annuiteMax1,Credit.calculeAnnuiteMaximale(2, 20000, 3, 8).annuiteMaximale(),0.1);*/
 
 	}
 }
