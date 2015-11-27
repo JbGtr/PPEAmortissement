@@ -116,7 +116,7 @@ public class Ligne
 			double montantEmprunt = lignecourante.capitalFinal;
 			double interet = (montantEmprunt*(credit.taux()/100));
 			double annuite = lignecourante.amortissements + interet;
-			double capitalFinal = montantEmprunt - annuite;
+			double capitalFinal = montantEmprunt - lignecourante.amortissements;
 			
 			return new Ligne(numannee, montantEmprunt, interet, lignecourante.amortissements, annuite, capitalFinal);
 		}

@@ -26,16 +26,16 @@ public class CreditTest {
 	
 	@Test
 	public void testcalculDuree() {
-		assertEquals();
+//		assertEquals();
 	}
 	
 	@Test
 	public void testcalculeMontantEmprunte() {
-		assertEquals();
+//		assertEquals();
 	}
 	
 	@Test
 	public void testcalculeAnuiteMaximale() {
-		assertEquals();
+//		assertEquals();
 	}
 }
