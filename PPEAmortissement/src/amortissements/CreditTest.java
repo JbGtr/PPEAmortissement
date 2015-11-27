@@ -11,23 +11,23 @@ import org.junit.Test;
 			public void testCalculeTaux()
 			{
 				int type = 1;
-				double montant = 100000;
-				double annuiteMaximale = 10000;
-				int duree = 20;
-				double taux = 0.05;
+				double montant = 20000;
+				double annuiteMaximale = 3100;
+				int duree = 8;
+				double taux = 3;
 				Credit credit;
-					credit = Credit.calculeTaux(Credit.AMORTISSEMENT_CONSTANTS, 100000, 10000, 20);
-					assertTrue(type == credit.typeCredit());
-					assertTrue(montant == credit.montantEmprunte());
-					assertTrue(annuiteMaximale == credit.annuiteMaximale());
-					assertTrue(duree == credit.duree());
-					assertTrue(taux == credit.taux());
+				credit = Credit.calculeTaux(Credit.AMORTISSEMENT_CONSTANTS, 20000, 3100, 8);
+				assertTrue(type == credit.typeCredit());
+				assertTrue(montant == credit.montantEmprunte());
+				assertTrue(annuiteMaximale == credit.annuiteMaximale());
+				assertTrue(duree == credit.duree());
+				assertTrue(taux == credit.taux());
 				
 				
 				
-				annuiteMaximale = 8024.26;
+				annuiteMaximale = 2849;
 				type = 2;
-				credit = Credit.calculeTaux(Credit.ANNUITES_CONSTANTES, 100000, 8024.26, 20);
+				credit = Credit.calculeTaux(Credit.ANNUITES_CONSTANTES, 20000, 2849, 8);
 				assertTrue(type == credit.typeCredit());
 				assertTrue(montant == credit.montantEmprunte());
 				assertTrue(annuiteMaximale == credit.annuiteMaximale());
@@ -40,12 +40,12 @@ import org.junit.Test;
 			public void testCalculeDuree() 
 			{
 				int type = 1;
-				double montant = 65000;
-				double annuiteMaximale = 11122.22;
-				int duree = 9;
-				double taux = 0.06;
+				double montant = 20000;
+				double annuiteMaximale = 3100;
+				int duree = 8;
+				double taux = 3;
 				Credit credit;
-					credit = Credit.calculeDuree(Credit.AMORTISSEMENT_CONSTANTS, 65000, 11122.22, 0.06);
+					credit = Credit.calculeDuree(Credit.AMORTISSEMENT_CONSTANTS, 20000, 3100, 3);
 					assertTrue(type == credit.typeCredit());
 					assertTrue(montant == credit.montantEmprunte());
 					assertTrue(annuiteMaximale == credit.annuiteMaximale());
@@ -55,8 +55,8 @@ import org.junit.Test;
 				
 				
 				type = 2;
-				annuiteMaximale = 9556.45;
-					credit = Credit.calculeDuree(Credit.ANNUITES_CONSTANTES, 65000, 9556.45, 0.06);
+				annuiteMaximale = 2849;
+					credit = Credit.calculeDuree(Credit.ANNUITES_CONSTANTES, 20000, 2849, 3);
 					assertTrue(type == credit.typeCredit());
 					assertTrue(montant == credit.montantEmprunte());
 					assertTrue(annuiteMaximale == credit.annuiteMaximale());
@@ -69,12 +69,12 @@ import org.junit.Test;
 			@Test
 			public void testCalculeMontantEmprunte() {
 				int type = 1;
-				double montant = 123000;
-				double annuiteMaximale = 34440.00;
-				int duree = 4;
-				double taux = 0.03;
+				double montant = 20000;
+				double annuiteMaximale = 3100;
+				int duree = 8;
+				double taux = 3;
 				Credit credit;
-					credit = Credit.calculeMontantEmprunte(Credit.AMORTISSEMENT_CONSTANTS, 34440.00, 0.03, 4);
+					credit = Credit.calculeMontantEmprunte(Credit.AMORTISSEMENT_CONSTANTS, 3100, 3, 8);
 					assertTrue(type == credit.typeCredit());
 					assertTrue(montant == credit.montantEmprunte());
 					assertTrue(annuiteMaximale == credit.annuiteMaximale());
@@ -82,8 +82,8 @@ import org.junit.Test;
 					assertTrue(taux == credit.taux());
 				
 				type = 2;
-				annuiteMaximale = 33090.33;
-				credit = Credit.calculeMontantEmprunte(Credit.ANNUITES_CONSTANTES, 33090.33, 0.03, 4);
+				annuiteMaximale = 2849;
+				credit = Credit.calculeMontantEmprunte(Credit.ANNUITES_CONSTANTES, 2849, 3, 8);
 				assertTrue(type == credit.typeCredit());
 				assertEquals(montant, credit.montantEmprunte(), 0.01);
 				assertTrue(annuiteMaximale == credit.annuiteMaximale());
@@ -96,12 +96,12 @@ import org.junit.Test;
 			public void testCalculeAnnuiteMaximale() 
 			{
 				int type = 1;
-				double montant = 100000;
-				double annuiteMaximale = 10000;
-				int duree = 20;
-				double taux = 0.05;
+				double montant = 20000;
+				double annuiteMaximale = 3100;
+				int duree = 8;
+				double taux = 3;
 				Credit credit;
-				credit = Credit.calculeAnuiteMaximale(Credit.AMORTISSEMENT_CONSTANTS, 100000, 0.05, 20);
+				credit = Credit.calculeAnuiteMaximale(Credit.AMORTISSEMENT_CONSTANTS, 20000, 3, 8);
 					assertTrue(type == credit.typeCredit());
 					assertTrue(montant == credit.montantEmprunte());
 					assertTrue(annuiteMaximale == credit.annuiteMaximale());
@@ -110,8 +110,8 @@ import org.junit.Test;
 				
 				
 				type = 2;
-				annuiteMaximale = 8024.26;
-					credit = Credit.calculeAnuiteMaximale(Credit.ANNUITES_CONSTANTES, 100000, 0.05, 20);
+				annuiteMaximale = 2849;
+					credit = Credit.calculeAnuiteMaximale(Credit.ANNUITES_CONSTANTES, 20000, 3, 8);
 					assertTrue(type == credit.typeCredit());
 					assertTrue(montant == credit.montantEmprunte());
 					assertTrue(annuiteMaximale == credit.annuiteMaximale());
