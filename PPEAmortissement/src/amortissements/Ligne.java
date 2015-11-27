@@ -104,21 +104,22 @@ public class Ligne
 	 * la dernière ligne.
 	 */
 	
-	public static Ligne ligneSuivante(Credit credit, Ligne lignecourante)
+	public Ligne ligneSuivante(Credit credit)
 	{
-		if(lignecourante.annee == credit.duree())
+		if(this.annee == credit.duree())
 		{
 			return null;
 		}
 		else
 		{
-			int numannee = lignecourante.annee++;
-			double montantEmprunt = lignecourante.capitalFinal;
+			Ligne derniereLigne;
+			int numannee = this.annee++;
+			double montantEmprunt = this.capitalFinal;
 			double interet = (montantEmprunt*(credit.taux()/100));
-			double annuite = lignecourante.amortissements + interet;
-			double capitalFinal = montantEmprunt - lignecourante.amortissements;
+			double annuite = this.amortissements + interet;
+			double capitalFinal = montantEmprunt - this.amortissements;
 			
-			return new Ligne(numannee, montantEmprunt, interet, lignecourante.amortissements, annuite, capitalFinal);
+			return new Ligne(numannee, montantEmprunt, interet, this.amortissements, annuite, capitalFinal);
 		}
 	}
 }
