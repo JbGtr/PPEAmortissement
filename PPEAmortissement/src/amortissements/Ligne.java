@@ -112,7 +112,6 @@ public class Ligne
 		}
 		else
 		{
-			Ligne derniereLigne;
 			int numannee = this.annee++;
 			double montantEmprunt = this.capitalFinal;
 			double interet = (montantEmprunt*(credit.taux()/100));
@@ -121,5 +120,11 @@ public class Ligne
 			
 			return new Ligne(numannee, montantEmprunt, interet, this.amortissements, annuite, capitalFinal);
 		}
+	}
+	
+	public String toString()
+	{
+		return (this.annee + "|" + this.capitalInitial + "|" + this.amortissements + "|" + this.interets + "|" + this.annuite + "|" + this.capitalFinal);
+		
 	}
 }

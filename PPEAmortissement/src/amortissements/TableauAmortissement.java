@@ -38,7 +38,7 @@ public class TableauAmortissement
 	
 	public Ligne getLigne(int i)
 	{
-		return tableauAmor[i];		
+		return tableauAmor[i-1];		
 	}
 	
 	/**
@@ -48,8 +48,11 @@ public class TableauAmortissement
 	
 	public String toString() {
 		
-		System.out.println();
+		String leTableauAmortissement = "";
+		for (int i = 0; i < tableauAmor.length; i++) {
+			leTableauAmortissement += getLigne(i).toString();
+		}
 		
-		return null;
+		return leTableauAmortissement;
 	}
 }
