@@ -25,7 +25,7 @@ public class Interface extends JFrame{
 		this.setTitle("Amortissement");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
-		this.setPreferredSize(new Dimension(500, 400));
+		this.setPreferredSize(new Dimension(700, 400));
 		this.setVisible(true);
 		this.setLocationRelativeTo(null);
 		this.setContentPane(buildCurrentPanel());
@@ -49,12 +49,12 @@ public class Interface extends JFrame{
 		tableau = new JTable();
 		tableau.setModel(getModel());
 		scrollPane = new JScrollPane(tableau);
-		scrollPane.setPreferredSize(new Dimension(500, 250));	
+		scrollPane.setPreferredSize(new Dimension(600, 250));	
 	}
 	
 	public Object[][] initDonnesTableau()
 	{
-		Graph = new Object[tabAmor.getNbLignes()][6];
+		Graph = new Object[tabAmor.getNbLignes()][7];
 		System.out.println(tabAmor.getNbLignes());
 			for (int i = 0; i < tabAmor.getNbLignes(); i++) {
 				Graph[i][0] = tabAmor.getLigne(i).getAnnee();
