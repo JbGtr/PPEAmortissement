@@ -18,7 +18,7 @@ public class Credit
 	 * Cree un credit.
 	 */
 	
-	Credit (int typeCredit, double montantEmprunte, double annuiteMaximale,
+	private Credit (int typeCredit, double montantEmprunte, double annuiteMaximale,
 			double taux, int duree)
 	{
 		this.typeCredit = typeCredit ;
@@ -98,7 +98,6 @@ public class Credit
 		{
 			double amortissement = (montantEmprunte/duree);
 			taux = ((annuiteMaximale-amortissement)/(montantEmprunte)*100);
-			System.out.println(taux);
 			return new Credit(typeCredit, montantEmprunte, annuiteMaximale,
 					 taux, duree);
 		}

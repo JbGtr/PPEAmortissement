@@ -10,7 +10,7 @@ public class TableauAmortissement
 	 * Crée le tableau d'amortissement du crédit passé en paramètre.
 	 */
 	
-	private Ligne tableauAmor[];
+	private Ligne[] tableauAmor;
 	
 	public TableauAmortissement(Credit credit)
 	{
@@ -38,7 +38,7 @@ public class TableauAmortissement
 	
 	public Ligne getLigne(int i)
 	{
-		return tableauAmor[i-1];		
+		return tableauAmor[i];		
 	}
 	
 	/**
@@ -47,12 +47,10 @@ public class TableauAmortissement
 	 */
 	
 	public String toString() {
-		
-		String leTableauAmortissement = "";
+		String message = "";
 		for (int i = 0; i < tableauAmor.length; i++) {
-			leTableauAmortissement += getLigne(i).toString();
+			message+= tableauAmor[i].toString()+"\n";
 		}
-		
-		return leTableauAmortissement;
+		return message;
 	}
 }
