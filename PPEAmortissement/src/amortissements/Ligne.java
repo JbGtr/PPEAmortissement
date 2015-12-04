@@ -35,7 +35,7 @@ public class Ligne
 	
 	public int getAnnee()
 	{
-		return annee;
+		return annee+1;
 	}
 	
 	/**
@@ -95,7 +95,7 @@ public class Ligne
 		double amortissement = (credit.montantEmprunte()/credit.duree());
 		double capitalFinal = (credit.montantEmprunte()- amortissement);
 		double interet = (credit.montantEmprunte()*(credit.taux()/100));
-		return new Ligne (1, credit.montantEmprunte(), interet, amortissement, credit.annuiteMaximale(), capitalFinal);
+		return new Ligne (0, credit.montantEmprunte(), interet, amortissement, credit.annuiteMaximale(), capitalFinal);
 	}
 
 	/**
@@ -112,7 +112,7 @@ public class Ligne
 		}
 		else
 		{
-			int numannee = this.annee++;
+			int numannee = this.annee+1;
 			double montantEmprunt = this.capitalFinal;
 			double interet = (montantEmprunt*(credit.taux()/100));
 			double annuite = this.amortissements + interet;
@@ -124,7 +124,7 @@ public class Ligne
 	
 	public String toString()
 	{
-		return (this.annee + "|" + this.capitalInitial + "|" + this.amortissements + "|" + this.interets + "|" + this.annuite + "|" + this.capitalFinal);
+		return (this.getAnnee() + "|" + this.getCapitalInitial() + "|" + this.getAmortissements() + "|" + this.getInterets() + "|" + this.getAnnuite() + "|" + this.getCapitalFinal());
 		
 	}
 }
